@@ -6,7 +6,6 @@ import  Footer  from './layout/Footer'
 
 const { TabPane } = Tabs
 
-
 export default function App() {
   return (
     <>
