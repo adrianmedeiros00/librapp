@@ -1,5 +1,3 @@
-import  useData  from '../../../hooks/useData'
-import { publicationsList } from '../../../services/publications.service'
 import { Table } from 'antd'
 
 
@@ -26,14 +24,11 @@ const columns = [
     }
   ]
 
-export default function PublicationsList(){
-
-    const [publications, isLoading] = useData(publicationsList)
-
+export default function PublicationsList({publications, isLoading}){
     return(
       <>
         <h3>Lista de Publicações</h3>
-         <Table style={{marginRight:'50px', fontWeight:'normal'}} columns={columns} dataSource={publications} loading={isLoading} />
+         <Table style={{display:'flex',marginRight:'50px', fontWeight:'normal'}} columns={columns} dataSource={publications} loading={isLoading} />
       </>
     )
 }

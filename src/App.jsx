@@ -1,8 +1,10 @@
 import React from 'react'
 import Header from './layout/Header'
-import { Tabs } from 'antd'
-import PublicationsPage from './pages/Publications/PublicationsPage'
 import  Footer  from './layout/Footer'
+import PublicationsPage from './pages/Publications/PublicationsPage'
+import StudentsPage from './pages/Students/StudentsPage'
+import { Tabs } from 'antd'
+
 
 const { TabPane } = Tabs
 
@@ -14,10 +16,10 @@ export default function App() {
             <TabPane tab='Publicações' key='1'>
               <PublicationsPage />
             </TabPane>
-            <TabPane tab='Empréstimos' key='2'>
-          
-            </TabPane>
             <TabPane tab='Alunos' key='3'>
+              <StudentsPage/>
+            </TabPane>
+            <TabPane tab='Empréstimos' key='2'>
           
             </TabPane>
           </Tabs>

@@ -1,21 +1,18 @@
 import { Form, Input, Button } from 'antd';
 
 
-export default function PublicationsForm(){
+export default function StudentsForm(){
     return(
         <>
-            <h3>Adicionar Publicações</h3>
+            <h3>Cadastrar Alunos</h3>
                 <Form style={{display: 'block',flexDirection:'column',backgroundColor:'white', padding:'3rem', borderRadius:'2px', marginRight:'60%'}}>
-                    <Form.Item label="Título" name="title">
+                    <Form.Item label="Nome" name="name">
                         <Input />
                     </Form.Item>
-                    <Form.Item label="Autor" name="author">
+                    <Form.Item label="E-mail" name="email">
                         <Input />
                     </Form.Item>
-                    <Form.Item label="ISBN" name="isbn">
-                        <Input />
-                    </Form.Item>
-                    <Form.Item label="Edição" name="edition">
+                    <Form.Item label="Telefone" name="phone">
                         <Input />
                     </Form.Item>
                     <Button type='primary' htmlType='submit'>Salvar</Button>
