@@ -19,11 +19,13 @@ const columns = [
     }
   ]
 
-export default function StudentsList({students, isLoading}){
+ const StudentsList = ({students, isLoading}) => {
     return(
         <>
             <h3>Lista de Alunos</h3>
-            <Table style={{display:'flex',marginRight:'50px', fontWeight:'normal'}} columns={columns} dataSource={students} loading={isLoading} />
+            <Table  columns={columns} dataSource={students} loading={isLoading} style={{fontWeight:'normal'}}/>
         </>
     )
 }
+
+export default StudentsList

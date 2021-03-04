@@ -2,15 +2,17 @@ import PublicationsForm from './components/PublicationsForm'
 import PublicationsList from './components/PublicationsList'
 import useData from '../../hooks/useData'
 
-export default function PublicationsPage(){
+const PublicationsPage = () => {
 
-    const [publications, isLoading] = useData('publicacoes')
+    const [publications, isLoading, operations] = useData('publicacoes')
     
     return(
         <>
                 <h1>Gerenciamento de Publicações</h1>
                 <PublicationsList publications={publications} isLoading={isLoading}/>
-                <PublicationsForm />
+                <PublicationsForm insertPublication={operations.insert}/>
         </>       
     ) 
 }
+
+export default PublicationsPage

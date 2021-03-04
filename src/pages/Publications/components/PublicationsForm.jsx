@@ -1,21 +1,31 @@
 import { Form, Input, Button } from 'antd';
 
 
-export default function PublicationsForm(){
+const PublicationsForm = ({insertPublication}) => {
     return(
         <>
             <h3>Adicionar Publicações</h3>
-                <Form style={{display: 'block',flexDirection:'column',backgroundColor:'white', padding:'3rem', borderRadius:'2px', marginRight:'60%'}}>
-                    <Form.Item label="Título" name="title">
+                <Form onFinish={insertPublication} 
+                style={
+                    {
+                        backgroundColor:'white', 
+                        padding:'3rem',
+                        borderRadius:'2px', 
+                        display:'block', 
+                        flexDirection:'column',
+                        marginRight:'60%'
+                    }
+                }>
+                    <Form.Item label="Título" name='title'>
                         <Input />
                     </Form.Item>
                     <Form.Item label="Autor" name="author">
                         <Input />
                     </Form.Item>
-                    <Form.Item label="ISBN" name="isbn">
+                    <Form.Item label="Edição" name="edition">
                         <Input />
                     </Form.Item>
-                    <Form.Item label="Edição" name="edition">
+                    <Form.Item label="ISBN" name="isbn">
                         <Input />
                     </Form.Item>
                     <Button type='primary' htmlType='submit'>Salvar</Button>
@@ -24,3 +34,5 @@ export default function PublicationsForm(){
     )
    
 }
+
+export default PublicationsForm

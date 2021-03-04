@@ -1,6 +1,5 @@
 import { Table } from 'antd'
 
-
 const columns = [
     {
       title: 'Título',
@@ -24,11 +23,13 @@ const columns = [
     }
   ]
 
-export default function PublicationsList({publications, isLoading}){
+const PublicationsList = ({publications, isLoading}) => {
     return(
       <>
         <h3>Lista de Publicações</h3>
-         <Table style={{display:'flex',marginRight:'50px', fontWeight:'normal'}} columns={columns} dataSource={publications} loading={isLoading} />
+         <Table style={{fontWeight:'normal'}} columns={columns} dataSource={publications} loading={isLoading} />
       </>
     )
 }
+
+export default PublicationsList
