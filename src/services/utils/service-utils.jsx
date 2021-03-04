@@ -11,5 +11,5 @@ export const servicesCreator = (collectionName) => {
     }
 }
 
-export default servicesCreator;
+export default servicesCreator
 
