@@ -19,7 +19,7 @@ export default function useData(collectionName){
     const operations = {
         insert: (data) => service.insert(data)
             .then( docRef => 
-                setList([...list, { id: docRef.id, key: docRef.id, ...docRef.data() }])
+                setList([...list, { id: docRef.id, key: docRef.id, ...docRef }])
             ),
         remove: null,
         update: null,
