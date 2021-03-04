@@ -6,26 +6,25 @@ export default function useData(collectionName){
     const [list, setList] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
-    useEffect(() => service.list()
+    useEffect(() => {
+        service.list()
         .then( response => {
             setIsLoading(false)
                 setList(response.docs.map( data => { 
                     return { id: data.id, key: data.id, ...data.data() }
-            }))
+                }))
         })
-    , [])
-
+    }, [service])
 
     const operations = {
         insert: (data) => service.insert(data)
-            .then( docRef => 
-                setList([...list, { id: docRef.id, key: docRef.id, ...docRef }])
-            ),
+            .then( data => {
+                setList([...list, { id: data.id, key: data.id, ...data}])
+            }),
         remove: null,
         update: null,
         registry: null
     }
-
 
     return [list, isLoading, operations]
 }

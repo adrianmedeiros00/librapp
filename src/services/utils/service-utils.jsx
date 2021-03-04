@@ -1,6 +1,6 @@
 import { db } from '../../firebase.config'
 
-export const servicesCreator = (collectionName) => {
+export default function servicesCreator(collectionName){
     const collection = db.collection(collectionName)
     return {
         insert  : (data) => collection.add(data),
@@ -11,5 +11,5 @@ export const servicesCreator = (collectionName) => {
     }
 }
 
-export default servicesCreator
+
 
