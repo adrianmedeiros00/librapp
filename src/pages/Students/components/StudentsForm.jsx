@@ -7,12 +7,12 @@ const StudentsForm = ({insertStudent}) => {
             <h3>Cadastrar Alunos</h3>
                 <Form onFinish={insertStudent} style={
                     {
-                        display: 'block',
+                        display: 'flex',
                         flexDirection:'column',
                         backgroundColor:'white', 
                         padding:'3rem', 
                         borderRadius:'2px',
-                        marginRight:'60%'
+                        maxWidth:'30rem'
                     }
                 }>
                     <Form.Item label="Nome" name='name'>
@@ -24,7 +24,7 @@ const StudentsForm = ({insertStudent}) => {
                     <Form.Item label="Telefone" name="phone">
                         <Input />
                     </Form.Item>
-                    <Button type='primary' htmlType='submit'>Salvar</Button>
+                    <Button type='primary' htmlType='submit'  style={{height:'2rem', width:'5rem'}}>Salvar</Button>
                 </Form>
         </>
     )

@@ -8,12 +8,12 @@ const PublicationsForm = ({insertPublication}) => {
                 <Form onFinish={insertPublication} 
                 style={
                     {
-                        backgroundColor:'white', 
-                        padding:'3rem',
-                        borderRadius:'2px', 
-                        display:'block', 
+                        display: 'flex',
                         flexDirection:'column',
-                        marginRight:'60%'
+                        backgroundColor:'white', 
+                        padding:'3rem', 
+                        borderRadius:'2px',
+                        maxWidth:'30rem'
                     }
                 }>
                     <Form.Item label="Título" name='title'>
@@ -28,7 +28,7 @@ const PublicationsForm = ({insertPublication}) => {
                     <Form.Item label="ISBN" name="isbn">
                         <Input />
                     </Form.Item>
-                    <Button type='primary' htmlType='submit'>Salvar</Button>
+                    <Button type='primary' htmlType='submit' style={{height:'2rem', width:'5rem'}} >Salvar</Button>
                 </Form>
         </>
     )
