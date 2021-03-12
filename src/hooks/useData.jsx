@@ -1,4 +1,5 @@
 /* eslint-disable */
+
 import { useState, useEffect } from 'react'
 import servicesCreator from '../services/utils/service-utils'
 
@@ -9,22 +10,20 @@ export default function useData(collectionName){
 
     useEffect(() => {
         service.list()
-        .then( response => {
-            setIsLoading(false)
-                setList(response.docs.map( data => { 
+        .then( (response) => {
+                setIsLoading(false)
+                setList(response.docs.map( data => {
                     return { id: data.id, key: data.id, ...data.data() }
                 }))
-        })
+            })
     }, [])
 
     const operations = {
-        insert: (data) => service.insert(data)
-            .then( data => {
-                setList([...list, { id: data.id, key: data.id, ...data}])
-            }),
+        insert: (dados) => service.insert(dados)
+            .then( docRef => setList([...list, { id: docRef.id, key: docRef.id, ...docRef }])),
         remove: null,
         update: null,
-        registry: null
+        registry: null,
     }
 
     return [list, isLoading, operations]
