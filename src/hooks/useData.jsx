@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useState, useEffect } from 'react'
 import servicesCreator from '../services/utils/service-utils'
 
@@ -14,7 +15,7 @@ export default function useData(collectionName){
                     return { id: data.id, key: data.id, ...data.data() }
                 }))
         })
-    }, [service])
+    }, [])
 
     const operations = {
         insert: (data) => service.insert(data)

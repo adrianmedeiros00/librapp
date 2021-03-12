@@ -12,7 +12,9 @@ const { TabPane } = Tabs
 export default function App() {
   return (
     <>
-      <Header title='LibrApp'/>
+      <Header title='LibrApp'>
+        <img src="/pageicon.png" alt="icone" style={{display: 'flex', height:'40px', width:'40px', marginTop:'7px'}} />
+        </Header>
           <Tabs  defaultActiveKey='1' style={{padding:'3rem',color:'#A9A9A9', fontWeight:'bold'}}>
             <TabPane tab='Publicações' key='1'>
               <PublicationsPage />

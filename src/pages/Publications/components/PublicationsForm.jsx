@@ -1,19 +1,26 @@
 import { Form, Input, Button } from 'antd';
 
 
-const PublicationsForm = ({insertPublication}) => {
+const PublicationsForm = ({insertPublication, afterInsert}) => {
+
+    const whenFinish = (data) => {
+        insertPublication(data)
+        afterInsert()
+    }
+
+
     return(
         <>
-            <h3>Adicionar Publicações</h3>
-                <Form onFinish={insertPublication} 
+            <h3>Adicionar Publicação</h3>
+                <Form onFinish={whenFinish} 
                 style={
                     {
                         display: 'flex',
                         flexDirection:'column',
                         backgroundColor:'white', 
-                        padding:'3rem', 
+                        padding:'40px', 
                         borderRadius:'2px',
-                        maxWidth:'30rem'
+                        maxWidth: '50%'
                     }
                 }>
                     <Form.Item label="Título" name='title'>
@@ -28,7 +35,7 @@ const PublicationsForm = ({insertPublication}) => {
                     <Form.Item label="ISBN" name="isbn">
                         <Input />
                     </Form.Item>
-                    <Button type='primary' htmlType='submit' style={{height:'2rem', width:'5rem'}} >Salvar</Button>
+                    <Button type='primary' htmlType='submit' style={{height:'2rem', width:'5rem', marginLeft:'auto'}} >Salvar</Button>
                 </Form>
         </>
     )

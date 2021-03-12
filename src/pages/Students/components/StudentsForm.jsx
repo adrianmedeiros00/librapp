@@ -24,7 +24,7 @@ const StudentsForm = ({insertStudent}) => {
                     <Form.Item label="Telefone" name="phone">
                         <Input />
                     </Form.Item>
-                    <Button type='primary' htmlType='submit'  style={{height:'2rem', width:'5rem'}}>Salvar</Button>
+                    <Button type='primary' htmlType='submit'  style={{height:'2rem', width:'5rem', marginLeft:'auto'}}>Salvar</Button>
                 </Form>
         </>
     )
