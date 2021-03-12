@@ -23,10 +23,6 @@ const PublicationsPage = () => {
             )
             }
 
-            
-
-
-
         </>
     )
 }
