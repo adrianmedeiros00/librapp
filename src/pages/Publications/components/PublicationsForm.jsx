@@ -20,7 +20,7 @@ const PublicationsForm = ({insertPublication, afterInsert}) => {
                         backgroundColor:'white', 
                         padding:'40px', 
                         borderRadius:'2px',
-                        maxWidth: '50%'
+                        maxWidth: '40%',
                     }
                 }>
                     <Form.Item label="Título" name='title'>
