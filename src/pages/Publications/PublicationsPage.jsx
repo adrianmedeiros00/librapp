@@ -12,14 +12,14 @@ const PublicationsPage = () => {
     return (
         <>
             <h1>Gerenciamento de Publicações</h1>
-            <Button type={isVisible? 'danger' : 'primary'} onClick={() => setVisible(!isVisible)}>
-                {isVisible ? 'Voltar' : 'Adicionar Livro'}
+            <Button type={isVisible? 'ghost' : 'primary'} onClick={() => setVisible(!isVisible)}>
+                {isVisible ? '<< Voltar' : 'Adicionar Publicação'}
             </Button>
 
             { isVisible ? (
                 <PublicationsForm insertPublication={operations.insert} afterInsert={() => setVisible(false)} />
             ) : (
-                <PublicationsList publications={publications} isLoading={isLoading} />
+                <PublicationsList publications={publications} isLoading={isLoading} remove={operations.remove} />
             )
             }
 
