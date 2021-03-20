@@ -1,28 +1,39 @@
 import { Form, Input, Button } from 'antd';
+import { useEffect } from 'react'
 
+const PublicationsForm = ({publication, savePublication, afterInsert}) => {
+    
+    const [form] = Form.useForm()
 
-const PublicationsForm = ({insertPublication, afterInsert}) => {
+    useEffect(()=>{
+        form.setFieldsValue(publication)
+    }, [publication])
+
 
     const whenFinish = (data) => {
-        insertPublication(data)
+        savePublication(data)
         afterInsert()
     }
 
 
     return(
         <>
-            <h3>Adicionar Publicação</h3>
-                <Form onFinish={whenFinish} 
+            <h3>{ publication ? `Editando ${publication.title}` : 'Nova Publicação'}</h3>
+                <Form form={form} onFinish={whenFinish} 
                 style={
                     {
                         display: 'flex',
                         flexDirection:'column',
                         backgroundColor:'white', 
-                        padding:'40px', 
+                        padding:'10px', 
                         borderRadius:'2px',
-                        maxWidth: '40%',
+                        maxWidth: '30rem',
                     }
                 }>
+                    <Form.Item name='id'>
+                        <Input type='hidden' />
+                    </Form.Item>
+
                     <Form.Item label="Título" name='title'>
                         <Input />
                     </Form.Item>

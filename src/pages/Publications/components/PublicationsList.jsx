@@ -1,4 +1,4 @@
-import { Table, Button } from 'antd'
+import { Table, Button, Popconfirm } from 'antd'
 
 const startingColumns = [
   {
@@ -23,7 +23,7 @@ const startingColumns = [
   }
 ]
 
-const PublicationsList = ({ publications, isLoading, remove }) => {
+const PublicationsList = ({ publications, isLoading, edit, remove }) => {
 
   const columns = [
     ...startingColumns,
@@ -31,8 +31,13 @@ const PublicationsList = ({ publications, isLoading, remove }) => {
       title: 'Ações',
       dataIndex: 'acoes',
       key: 'acoes',
-      render: (_,publications) => 
-        <Button type='danger' onClick={ () => remove(publications.key) }>Excluir</Button>
+      render: (_,publications) =>
+      <> 
+      <Popconfirm title='Tem certeza que deseja excluir essa publicação?' onConfirm={() => remove(publications.key)}>
+        <Button type='danger'>Excluir</Button>
+      </Popconfirm>
+      <Button type='primary' onClick={() => edit(publications.key)} style={{marginLeft:'20px'}} >Editar</Button>
+      </>
     }
   ]
 
